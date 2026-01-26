@@ -1,12 +1,60 @@
-import { useState } from "react";
+import { useState,useRef} from "react";
 import Header from "./Header";
+import checkValidateData from "../utils/validate";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "../utils/firebase";
+// import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
     const[isSignIn,setIsSignIn]=useState(true);
+    const [errmsg,setErrmsg]=useState(null);
+    // const navigate=useNavigate();
     const toggleSignIn=()=>{
         setIsSignIn(!isSignIn);
     }
 
+    const handleButtonClick=()=>{
+      //validation of form data
+      const mess = checkValidateData(email.current.value.trim(),password.current.value.trim());
+      // console.log(mess);
+      setErrmsg(mess);
+      if(mess) return;
+
+      if(!isSignIn){//signup logic
+        createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
+        .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        console.log(user);//if promise success
+        })
+      .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      setErrmsg(errorCode+"-"+errorMessage);
+  });
+
+      }else{//signin Logic
+        signInWithEmailAndPassword(auth, email.current.value,password.current.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          // navigate("/browse");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrmsg(errorCode+"-"+errorMessage);
+        });
+
+      }
+    } 
+
+    const email=useRef(null);
+    const password=useRef(null);
+    const name=useRef(null);
+    
   return (
     <div className="relative h-screen w-screen">
       {/* Header */}
@@ -15,6 +63,7 @@ const Login = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
+          
           src="https://assets.nflxext.com/ffe/siteui/vlv3/d13e2d55-5cdd-48c0-a55b-4b292d0b9889/web/IN-en-20251229-TRIFECTA-perspective_d7edcd70-4cfd-441c-858c-c5e400ed6c2b_large.jpg"
           alt="background"
           className="h-full w-full object-cover"
@@ -25,12 +74,14 @@ const Login = () => {
 
       {/* Login Form */}
       <div className="relative flex justify-center items-center h-full">
-        <form className="w-3/12 bg-black bg-opacity-80 p-12 rounded-md">
+        <form onSubmit={(e)=>e.preventDefault()}
+          className="w-3/12 bg-black bg-opacity-80 p-12 rounded-md">
           <h1 className="text-white text-3xl font-bold mb-6">{isSignIn ? "Sign In":"Sign Up"}</h1>
 
           {
             !isSignIn && (
-                <input type="text"
+                <input ref={name} 
+                type="text"
                 placeholder="Name"
                 className="w-full p-3 mb-4 bg-gray-700 text-white rounded-sm outline-none"
           />
@@ -38,18 +89,22 @@ const Login = () => {
           }
 
           <input
-            type="text"
+            ref={email}
+            type="email"
             placeholder="Email or phone number"
             className="w-full p-3 mb-4 bg-gray-700 text-white rounded-sm outline-none"
           />
 
-          <input
+          <input 
+            ref={password} 
             type="password"
             placeholder="Password"
             className="w-full p-3 mb-6 bg-gray-700 text-white rounded-sm outline-none"
           />
 
-          <button className="w-full bg-red-600 text-white p-3 rounded-sm font-semibold hover:bg-red-700">
+          <p className="text-red-500">{errmsg}</p>
+
+          <button className="w-full bg-red-600 text-white p-3 rounded-sm font-semibold hover:bg-red-700" onClick={handleButtonClick}>
             {isSignIn ? "Sign In":"Sign Up"}
           </button>
 
