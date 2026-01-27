@@ -15,14 +15,19 @@
 - Bugfix: if user not logged in -automatically redirect to login page and viceversa
 - we unsubscribed on OnAuthStateChanged
 - Register TMDB API & create an app & get access token
-- Get Data from TMDB now playing movies list and adding it to Redux store (stuctured in new hook)
+- Get Data from TMDB now playing movies list and adding it to Redux store 
+- custom hook for now playing movies
 - Browse page -> MainContainer
                     - videoBackground
                     - Video Title
                 SecondaryContainer
                     -movieList * n
                     - cards * n
-
+- fetch data and trailer video
+- update store with trailer video data
+- embedded the youtube video and make it autoplay in background
+- styling mainContainer using tailwind class
+- Building Secondary container
 
 ...
 # features

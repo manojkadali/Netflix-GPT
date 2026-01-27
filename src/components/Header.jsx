@@ -32,7 +32,7 @@ const Header=()=>{
         //unsubscribe when onAuthstateChanged unmounts()
          return ()=>unsubscribe();
     },[]);
-    return <div className="absolute flex justify-between w-screen px-8 py-2 bg-linear-to-b from-black z-10">
+    return <div className="absolute flex justify-between w-screen px-8 py-2 bg-linear-to-b from-black z-50">
         <img className="w-44 "
         src="https://www.freepnglogos.com/uploads/netflix-logo-text-emblem-31.png" alt="logo"/>
         
