@@ -28,6 +28,9 @@
 - embedded the youtube video and make it autoplay in background
 - styling mainContainer using tailwind class
 - Building Secondary container
+- fetching list of movies(popular,trending..)
+- displaying them in horizontal rows with smooth scroll
+- GPT Search feature
 
 ...
 # features
