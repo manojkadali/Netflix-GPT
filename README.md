@@ -1,4 +1,4 @@
-<img width="1896" height="870" alt="Screenshot 2026-02-13 192142" src="https://github.com/user-attachments/assets/2a1785f9-c48c-4d0c-85f9-c947cf1d0ccf" /><img width="1918" height="892" alt="Screenshot 2026-02-13 191927" src="https://github.com/user-attachments/assets/83b5ebc8-1540-43d1-ab37-1513327e7019" /># NetflixGPT 
+# NetflixGPT 
 - create react + vite
 - configure Tailwind CSS
 - Header
