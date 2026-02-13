@@ -53,6 +53,15 @@
 ![Login_Page](![Uploading Screenshot 2026-02-13 191927.png…])
 ![Home](<img width="1920" height="1080" alt="Screenshot (76)" src="https://github.com/user-attachments/assets/2895ff7a-f0db-4e7d-9958-0e4b2c25fe27" />)
 
+## Screenshots
+
+> Screenshots of the UI (Template List, Editor, Versioning, Preview) are included in the project submission.
+![Home Page](<ScreenShots/Screenshot (51).png>)
+![New Template](ScreenShots/image.png)
+![Edit Template](<ScreenShots/Screenshot (52).png>)
+![NewVersion or Overwrite](<ScreenShots/Screenshot (53).png>)
+![Versions List](<ScreenShots/Screenshot (54).png>)
+![Delete](<ScreenShots/Screenshot (55).png>)
 
 ![Scrolling MovieCard](![Uploading Screenshot 2026-02-13 192142.png…])
 ![GPT_Search](<img width="1919" height="874" alt="Screenshot 2026-02-13 192213" src="https://github.com/user-attachments/assets/c7ba167d-8e1b-4a0c-89e3-a9b09eaff51a" />)
