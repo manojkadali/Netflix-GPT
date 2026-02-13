@@ -50,11 +50,6 @@
       
 ## Screenshots
 
-![Login_Page](![Uploading Screenshot 2026-02-13 191927.png…])
-![Home](<img width="1920" height="1080" alt="Screenshot (76)" src="https://github.com/user-attachments/assets/2895ff7a-f0db-4e7d-9958-0e4b2c25fe27" />)
-
-## Screenshots
-
 ![Login](Screenshots/Login.png)
 ![Home](Screenshots/Home.png)
 ![MovieCards](Screenshots/ScrollMovieCards.png)
